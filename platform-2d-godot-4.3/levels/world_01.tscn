@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=4 uid="uid://c3bcddocg8yeo"]
+[gd_scene load_steps=20 format=4 uid="uid://c3bcddocg8yeo"]
 
 [ext_resource type="Texture2D" uid="uid://bky6pol4rpbnj" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_nowu3"]
 [ext_resource type="Texture2D" uid="uid://7mv5oqh0xa5e" path="res://assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_bej5q"]
 [ext_resource type="PackedScene" uid="uid://p8egs2uhc4cy" path="res://actors/player.tscn" id="3_i8a5r"]
+[ext_resource type="PackedScene" uid="uid://ds5xm3yg1rxxm" path="res://prefabs/coin.tscn" id="3_rrr8y"]
 [ext_resource type="Texture2D" uid="uid://d1801i5lyy64" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/5 - Sky_color.png" id="4_yiynn"]
 [ext_resource type="Texture2D" uid="uid://cvf7vh7e6n8b8" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" id="5_cg7f3"]
 [ext_resource type="Texture2D" uid="uid://cnhw54lde68fl" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="6_17h18"]
@@ -10,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bupdndqk8e8bx" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="7_ex6ju"]
 [ext_resource type="Texture2D" uid="uid://8b11wj5fng4v" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="8_dlbjv"]
 [ext_resource type="PackedScene" uid="uid://cdlxb2bya54sp" path="res://prefabs/moving_platform.tscn" id="10_o4lwv"]
+[ext_resource type="PackedScene" uid="uid://cvohca6ild8mk" path="res://actors/enemy.tscn" id="12_i7l3h"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_dfa6e"]
 tile_data = PackedInt32Array(0, 65539, 1)
@@ -178,6 +180,26 @@ position = Vector2(-25, 17)
 tile_map_data = PackedByteArray("AAALAA0AAwADAAUAAAAGAA0AAwAFAAEAAAANAAwAAwAJAAEAAAARAA4AAwABAAUAAAAIAA4AAwABAAUAAAASAAMAAwABAAEAAAAbAA0AAwAFAAEAAAAdAAcAAwAJAAEAAAAXAAYAAwABAAUAAAAuAA4AAwAOAAUAAAAwAA4AAwAQAAUAAAAyAA4AAwASAAUAAAAuAA0AAwAOAAUAAAAwAA0AAwAQAAUAAAAyAA0AAwASAAUAAAAuAAwAAwAOAAUAAAAwAAwAAwAQAAUAAAAyAAwAAwASAAUAAAAuAAsAAwAOAAUAAAAwAAsAAwAQAAUAAAAyAAsAAwASAAUAAAAuAAoAAwAOAAUAAAAwAAoAAwAQAAUAAAAyAAoAAwASAAUAAAAuAAkAAwAOAAQAAAAvAAkAAwAPAAQAAAAwAAkAAwAQAAQAAAAxAAkAAwARAAQAAAAyAAkAAwASAAQAAAAgAA0AAwAOAAQAAAAgAA4AAwAOAAUAAAAhAA0AAwAPAAQAAAAiAA0AAwAQAAQAAAAiAA4AAwAQAAUAAAAjAA0AAwARAAQAAAAkAA0AAwASAAQAAAAkAA4AAwASAAUAAAAnAAsAAwAOAAQAAAAnAAwAAwAOAAUAAAAnAA0AAwAOAAUAAAAoAAsAAwAPAAQAAAApAAsAAwAQAAQAAAApAAwAAwAQAAUAAAApAA0AAwAQAAUAAAApAA4AAwAQAAUAAAAqAAsAAwARAAQAAAArAAsAAwASAAQAAAArAAwAAwASAAUAAAArAA0AAwASAAUAAAArAA4AAwASAAUAAAA2AAcAAwAPAAQAAAA3AAcAAwAQAAQAAAA4AAcAAwARAAQAAAA5AAcAAwASAAQAAAA1AAcAAwAOAAQAAAA1AAgAAwAOAAUAAAA1AAkAAwAOAAUAAAA1AAoAAwAOAAUAAAA1AAsAAwAOAAUAAAA1AAwAAwAOAAUAAAA1AA0AAwAOAAUAAAA1AA4AAwAOAAUAAAA3AAgAAwAQAAUAAAA3AAkAAwAQAAUAAAA3AAoAAwAQAAUAAAA3AAsAAwAQAAUAAAA3AAwAAwAQAAUAAAA3AA0AAwAQAAUAAAA3AA4AAwAQAAUAAAA5AAgAAwASAAUAAAA5AAkAAwASAAUAAAA5AAoAAwASAAUAAAA5AAsAAwASAAUAAAA5AAwAAwASAAUAAAA5AA0AAwASAAUAAAA5AA4AAwASAAUAAAAnAA4AAwAOAAUAAABEAA0AAwAJAAEAAAA8AA0AAwAFAAEAAABAAA0AAwABAAEAAAA+AA4AAwABAAUAAABFAA4AAwABAAUAAAA7AA4AAwABAAUAAAAtAA4AAwABAAUAAAAjAA4AAwABAAUAAAA2AA4AAwABAAUAAAAzAA4AAwABAAUAAAAZAA4AAwABAAUAAAAoAAIAAwAFAAEAAAAmAAMAAwADAAUAAAArAAIAAwABAAEAAAAuAAMAAwABAAUAAAAxAAMAAwABAAUAAAA=")
 tile_set = SubResource("TileSet_tqmgl")
 
+[node name="coins" type="Node2D" parent="."]
+
+[node name="coin" parent="coins" instance=ExtResource("3_rrr8y")]
+position = Vector2(267, 85)
+
+[node name="coin2" parent="coins" instance=ExtResource("3_rrr8y")]
+position = Vector2(293, 85)
+
+[node name="coin3" parent="coins" instance=ExtResource("3_rrr8y")]
+position = Vector2(387, 181)
+
+[node name="coin4" parent="coins" instance=ExtResource("3_rrr8y")]
+position = Vector2(363, 181)
+
+[node name="coin5" parent="coins" instance=ExtResource("3_rrr8y")]
+position = Vector2(323, 213)
+
+[node name="coin6" parent="coins" instance=ExtResource("3_rrr8y")]
+position = Vector2(299, 213)
+
 [node name="moving_platform" parent="." instance=ExtResource("10_o4lwv")]
 position = Vector2(99, 104)
 distance = 86
@@ -197,7 +219,8 @@ position = Vector2(0, -38)
 motion_mirroring = Vector2(432, 0)
 
 [node name="texture" type="Sprite2D" parent="BG/05"]
-scale = Vector2(1.5, 1.5)
+position = Vector2(0, -102)
+scale = Vector2(1.5, 1.99038)
 texture = ExtResource("4_yiynn")
 centered = false
 
@@ -242,3 +265,9 @@ motion_mirroring = Vector2(432, 0)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_dlbjv")
 centered = false
+
+[node name="enemy" parent="." instance=ExtResource("12_i7l3h")]
+position = Vector2(339, 248)
+
+[node name="enemy2" parent="." instance=ExtResource("12_i7l3h")]
+position = Vector2(651, 248)
