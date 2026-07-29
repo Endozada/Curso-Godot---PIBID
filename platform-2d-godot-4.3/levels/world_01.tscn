@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=4 uid="uid://c3bcddocg8yeo"]
+[gd_scene load_steps=21 format=4 uid="uid://c3bcddocg8yeo"]
 
+[ext_resource type="Script" path="res://scripts/world_01.gd" id="1_ckagv"]
 [ext_resource type="Texture2D" uid="uid://bky6pol4rpbnj" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_nowu3"]
 [ext_resource type="Texture2D" uid="uid://7mv5oqh0xa5e" path="res://assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_bej5q"]
 [ext_resource type="PackedScene" uid="uid://p8egs2uhc4cy" path="res://actors/player.tscn" id="3_i8a5r"]
@@ -164,6 +165,7 @@ shader_parameter/move_speed = 0.01
 
 [node name="World-01" type="Node2D"]
 position = Vector2(-27, 0)
+script = ExtResource("1_ckagv")
 
 [node name="level" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_tqmgl")
@@ -271,3 +273,12 @@ position = Vector2(339, 248)
 
 [node name="enemy2" parent="." instance=ExtResource("12_i7l3h")]
 position = Vector2(651, 248)
+
+[node name="camera" type="Camera2D" parent="."]
+visible = false
+limit_left = 0
+limit_smoothed = true
+drag_horizontal_enabled = true
+drag_right_margin = 0.5
+editor_draw_limits = true
+editor_draw_drag_margin = true

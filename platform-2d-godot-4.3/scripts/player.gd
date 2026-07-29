@@ -2,10 +2,11 @@ extends CharacterBody2D
 
 
 const SPEED = 200.0
-const JUMP_VELOCITY = -400.0
+const JUMP_FORCE = -400.0
 var is_jumping := false
 
 @onready var animation := $anim as AnimatedSprite2D
+@onready var remote_transform := $remote as RemoteTransform2D
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -14,7 +15,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = JUMP_FORCE
 		is_jumping = true
 	elif is_on_floor():
 		is_jumping = false
@@ -35,3 +36,13 @@ func _physics_process(delta: float) -> void:
 		animation.play("idle")
 
 	move_and_slide()
+
+
+func _on_hurtbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemies"):
+		queue_free()
+
+func follow_camera(camera):
+	var camera_path = camera.get_path()
+	remote_transform.remote_path = camera_path
+	
